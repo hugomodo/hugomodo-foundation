@@ -1,6 +1,20 @@
-article:not(.author) {
-  @extend .d-flex, .flex-column;
+header#hugoModule-mainHeader {
+  @extend .grid-x, .grid-margin-x;
   > * {
+    @extend .cell;
+  }
+}
+article#hugoModule-mainArticle {
+  @extend .grid-x, .grid-margin-x;
+  > * {
+    @extend .cell;
+  }
+}
+
+article:not(.author) {
+  @extend .grid-x;
+  > * {
+    @extend .cell;
     order: 2;
   }
   header {
@@ -16,8 +30,9 @@ article:not(.author) {
 }
 
 article.author > .hugoComponent-authorWrapper {
-  @extend .d-flex, .flex-row, .flex-wrap, .justify-content-between, .mb-4;
+  @extend .grid-x, .grid-margin-x;
   > * {
+    @extend .cell;
     order: 2;
   }
   header {
@@ -39,6 +54,8 @@ article.author > .hugoComponent-authorWrapper {
     @include inline-author-bio(30%);
   }
   address {
+    margin:0;
+    padding:0 15px;
     @include inline-author-bio(70%);
   }
   div.bio {

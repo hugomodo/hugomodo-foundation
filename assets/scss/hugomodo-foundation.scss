@@ -1,12 +1,37 @@
 @import "foundation/foundation";
 
-//@import "articles";
+@import "articles";
 
 @include foundation-everything(true);
 
-// header#hugoModule-siteHeader {
-//   @extend .top-bar;
-//   nav#hugoModule-siteNav ul {
-//     @extend .menu;
-//   }
-// }
+header#hugoModule-siteHeader {
+  @extend .top-bar;
+  strong#hugoModule-siteTitle {
+    font-size: 1em;
+    margin-top:0;
+    margin-bottom:0;
+  }
+  nav#hugoModule-siteNav {
+    @extend .top-bar-left;
+    ul {
+      @extend .menu;
+    }
+  }
+}
+
+main#hugoModule-main {
+  @extend .grid-container;
+}
+
+footer#hugoModule-siteFooter {
+  @extend .grid-container, .fluid;
+  > #hugoModule-siteFooterWrapper {
+    @extend .grid-x, .grid-margin-x;
+    > *:not(#hugoModule-siteFooterCopyright) {
+      @extend .cell, .large-auto;
+    }
+    > #hugoModule-siteFooterCopyright {
+      @extend .cell, .text-center;
+    }
+  }
+}
