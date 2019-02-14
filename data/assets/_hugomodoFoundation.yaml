@@ -1,0 +1,6 @@
+js:
+- jquery.js
+- foundation.js
+
+scss:
+- hugomodo-foundation.scss
